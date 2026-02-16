@@ -10,8 +10,14 @@ echo ":: Running post-install tweaks..."
 
 # ---- Enable full Flathub (replace Fedora's filtered version) ----
 # Fedora ships a curated subset of Flathub. We want the full thing.
-flatpak remote-delete --if-exists fedora
-flatpak remote-delete --if-exists fedora-testing
+if flatpak remotes --system --columns=name | grep -Fxq fedora; then
+  flatpak remote-delete --system fedora
+fi
+
+if flatpak remotes --system --columns=name | grep -Fxq fedora-testing; then
+  flatpak remote-delete --system fedora-testing
+fi
+
 
 # ---- Set default kernel boot parameters ----
 # BBR TCP congestion control — better network throughput for game downloads
