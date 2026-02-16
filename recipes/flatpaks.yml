@@ -28,16 +28,14 @@ configurations:
 
       # ---- Gaming ----
       - com.valvesoftware.Steam             # Flatpak Steam (alternative to layered)
-      - net.lutris.Lutris                   # Flatpak Lutris (alternative to layered)
       - net.davidotek.pupgui2               # ProtonUp-Qt — manage Proton/Wine versions
       # - com.heroicgameslauncher.hgl         # Heroic — Epic/GOG/Amazon game launcher
 
       # ---- Media ----
       - org.videolan.VLC                    # Media player
-      - com.obsproject.Studio               # OBS Studio for streaming/recording
 
       # ---- Communication ----
-      - com.discordapp.Discord              # Discord
+      - im.riot.Riot
 
       # ---- Utilities ----
       - org.gnome.FileRoller                # Archive manager
