@@ -51,10 +51,17 @@ dnf5 -y copr enable kylegospo/webapp-manager
 # Provides: rom-properties — file manager plugin to preview ROM metadata
 dnf5 -y copr enable kylegospo/rom-properties
 
+dnf5 -y makecache || true
+
+
 # ---- Tailscale (optional but commonly wanted) ----
 dnf5 -y config-manager addrepo \
     --overwrite \
     --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+
+# Pre-import tailscale repo key for noninteractive builds
+rpm --import https://pkgs.tailscale.com/stable/fedora/repo.gpg
+dnf5 -y makecache --repo tailscale-stable || true
 
 # ---- Set repo priorities ----
 # Terra mesa builds should override Fedora's mesa for latest features.
@@ -62,6 +69,6 @@ dnf5 -y config-manager addrepo \
 echo ":: Configuring repository priorities..."
 dnf5 -y config-manager setopt "terra-mesa".enabled=true
 dnf5 -y config-manager setopt "*terra*".priority=3
-dnf5 -y config-manager setopt "*rpmfusion*".priority=5 "*rpmfusion*".exclude="mesa-*"
+dnf5 -y config-manager setopt "*rpmfusion*".priority=5
 
 echo ":: Repository setup complete."
