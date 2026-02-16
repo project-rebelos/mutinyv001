@@ -32,7 +32,8 @@ dnf5 -y install \
 # since the bazzite kernel COPR may have dependencies on bazzite-specific
 # packages. The fsync kernel gives us the most impactful gaming patches
 # (futex2/fsync, winesync/ntsync prep, HDR patches, etc.)
-dnf5 -y copr enable sentry/kernel-fsync
+
+# dnf5 -y copr enable sentry/kernel-fsync
 
 # ---- COPR: LatencyFleX ----
 # Provides: latencyflex-vulkan-layer — reduces input latency in games
@@ -40,7 +41,7 @@ dnf5 -y copr enable kylegospo/LatencyFleX
 
 # ---- COPR: hl2linux-selinux (Valve/Steam SELinux policies) ----
 # Provides: SELinux policies that let Steam work properly on Fedora Atomic
-dnf5 -y copr enable kylegospo/hl2linux-selinux
+# dnf5 -y copr enable kylegospo/hl2linux-selinux
 
 # ---- COPR: webapp-manager ----
 # Provides: webapp-manager — create web apps from websites
