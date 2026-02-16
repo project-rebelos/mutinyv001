@@ -49,7 +49,7 @@ dnf5 -y copr enable kylegospo/webapp-manager
 
 # ---- COPR: rom-properties ----
 # Provides: rom-properties — file manager plugin to preview ROM metadata
-dnf5 -y copr enable kylegospo/rom-properties
+dnf5 -y copr enable bazzite-org/rom-properties
 
 dnf5 -y makecache || true
 

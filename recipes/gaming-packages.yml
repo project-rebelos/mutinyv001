@@ -11,6 +11,7 @@
 
 type: dnf
 install:
+  allow-erasing: true
   packages:
     # ---- Multimedia Codecs (that Fedora Onyx doesn't ship) ----
     - ffmpeg
@@ -44,8 +45,9 @@ install:
     # ---- Gaming: Controller Support ----
     # NOTE: xone (Xbox One wireless) requires an akmod/DKMS build — skipping
     # for now as it's medium-difficulty. xpad (wired Xbox) works out of the box.
-    - game-devices-udev     # Udev rules for common game controllers
+    # - game-devices-udev     # Udev rules for common game controllers
     - joystick-support      # Joystick calibration tools (if available)
+    - steam-devices
 
     # ---- Networking & VPN ----
     - tailscale             # Mesh VPN (from tailscale repo)
@@ -64,7 +66,7 @@ install:
     - solaar                # Logitech device manager
 
     # ---- File Manager & ROM Properties ----
-    - rom-properties        # Preview ROM file metadata in file manager
+    - rom-properties-gtk3        # Preview ROM file metadata in file manager
 
     # ---- Webapp Manager ----
     - webapp-manager        # Create web apps from websites
@@ -78,6 +80,7 @@ install:
     - google-noto-emoji-color-fonts
     - liberation-fonts
     - fira-code-fonts
+
 
 # remove:
 #   packages:
