@@ -61,10 +61,9 @@ modules:
   # =========================================================================
   # 6. CUSTOM JUSTFILES — ujust commands for user convenience
   # =========================================================================
-  - type: justfiles
-    justfiles:
-      - source: gaming
-        destination: gaming
+   - type: justfiles
+    include:
+      - gaming.just
 
   # =========================================================================
   # 7. POST-INSTALL TWEAKS — Final cleanup and config
