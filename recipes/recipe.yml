@@ -62,7 +62,7 @@ modules:
   # 7. POST-INSTALL TWEAKS — Final cleanup and config
   # =========================================================================
   - type: script
-    snippets:
+    scripts:
       - post-install.sh
 
   # =========================================================================
