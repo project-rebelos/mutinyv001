@@ -61,7 +61,7 @@ modules:
   # =========================================================================
   # 6. CUSTOM JUSTFILES — ujust commands for user convenience
   # =========================================================================
-   - type: justfiles
+  - type: justfiles
     include:
       - gaming.just
 
