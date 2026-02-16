@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
 # flatpaks.yml — Default Flatpak configuration
 #
 # Enables Flathub and installs a curated set of default Flatpak apps.
