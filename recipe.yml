@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+
+###############################################################################
+# Budgie Gaming Image
+#
+# A gaming-optimized Fedora Budgie Atomic image inspired by Bazzite's desktop
+# gaming features, without handheld device support or Bazzite branding.
+#
+# Base: Official Fedora Budgie Atomic (Onyx) — vanilla Fedora, no uBlue layer
+# Target: AMD GPUs only (open source mesa drivers)
+# Desktop: Budgie
+# Fedora: 43
+#
+# NOTE: Since Universal Blue deprecated their budgie-atomic-main image, we
+# build directly on top of the official Fedora Onyx image. This means we
+# don't get uBlue's base enhancements (codecs, distrobox, etc.) for free —
+# we add them ourselves.
+#
+# If ublue-os/budgie-atomic-main becomes available again, switch base-image
+# to ghcr.io/ublue-os/budgie-atomic-main for free codec/driver support.
+###############################################################################
+
+name: budgie-gaming
+description: A gaming-optimized Fedora Budgie Atomic desktop image
+
+base-image: quay.io/fedora-ostree-desktops/onyx
+image-version: 43
+
+modules:
+
+  # =========================================================================
+  # 1. REPOSITORIES — Add COPR repos and third-party sources
+  # =========================================================================
+  - type: script
+    snippets:
+      - setup-repos.sh
+
+  # =========================================================================
+  # 2. CORE SYSTEM PACKAGES — Gaming stack, drivers, and utilities
+  # =========================================================================
+  - from-file: gaming-packages.yml
+
+  # =========================================================================
+  # 3. SYSTEM CONFIG FILES — sysctl, modprobe, udev, etc.
+  # =========================================================================
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  # =========================================================================
+  # 4. FLATPAK DEFAULTS — Flathub + default apps
+  # =========================================================================
+  - from-file: flatpaks.yml
+
+  # =========================================================================
+  # 5. SYSTEMD UNITS — Enable/disable services
+  # =========================================================================
+  - from-file: systemd-config.yml
+
+  # =========================================================================
+  # 6. CUSTOM JUSTFILES — ujust commands for user convenience
+  # =========================================================================
+  - type: justfiles
+    justfiles:
+      - source: gaming
+        destination: gaming
+
+  # =========================================================================
+  # 7. POST-INSTALL TWEAKS — Final cleanup and config
+  # =========================================================================
+  - type: script
+    snippets:
+      - post-install.sh
+
+  # =========================================================================
+  # 8. IMAGE SIGNING
+  # =========================================================================
+  - type: signing
