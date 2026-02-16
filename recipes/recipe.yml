@@ -11,13 +11,6 @@
 # Desktop: Budgie
 # Fedora: 43
 #
-# NOTE: Since Universal Blue deprecated their budgie-atomic-main image, we
-# build directly on top of the official Fedora Onyx image. This means we
-# don't get uBlue's base enhancements (codecs, distrobox, etc.) for free —
-# we add them ourselves.
-#
-# If ublue-os/budgie-atomic-main becomes available again, switch base-image
-# to ghcr.io/ublue-os/budgie-atomic-main for free codec/driver support.
 ###############################################################################
 
 name: budgie-gaming
@@ -32,7 +25,7 @@ modules:
   # 1. REPOSITORIES — Add COPR repos and third-party sources
   # =========================================================================
   - type: script
-    snippets:
+    scripts:
       - setup-repos.sh
 
   # =========================================================================
