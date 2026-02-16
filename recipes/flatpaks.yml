@@ -42,7 +42,7 @@ configurations:
       # ---- Utilities ----
       - org.gnome.FileRoller                # Archive manager
       - org.gnome.Calculator                # Calculator
-      - com.github.mijorus.gearlever        # Manage AppImages
+      # - com.github.mijorus.gearlever        # Manage AppImages
 
     remove:
       - org.fedoraproject.MediaWriter       # Not needed on atomic desktop
