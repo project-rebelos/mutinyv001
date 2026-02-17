@@ -37,6 +37,7 @@ install:
     - latencyflex-vulkan-layer  # Input latency reduction (from COPR)
     - gamemode              # Feral Interactive's on-demand performance optimizer
     - gamescope             # Valve's micro-compositor for per-game display control
+    - power-profiles-daemon
 
     # ---- Gaming: Steam & Wine ----
     # - steam                 # From RPM Fusion
