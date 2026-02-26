@@ -33,7 +33,7 @@ dnf5 -y install \
 # packages. The fsync kernel gives us the most impactful gaming patches
 # (futex2/fsync, winesync/ntsync prep, HDR patches, etc.)
 
-# dnf5 -y copr enable sentry/kernel-fsync
+dnf5 -y copr enable bazzite-org/bazzite
 
 # ---- COPR: LatencyFleX ----
 # Provides: latencyflex-vulkan-layer — reduces input latency in games
@@ -70,5 +70,6 @@ echo ":: Configuring repository priorities..."
 dnf5 -y config-manager setopt "terra-mesa".enabled=true
 dnf5 -y config-manager setopt "*terra*".priority=3
 dnf5 -y config-manager setopt "*rpmfusion*".priority=5
+
 
 echo ":: Repository setup complete."
