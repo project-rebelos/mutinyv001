@@ -80,6 +80,9 @@ install:
     - liberation-fonts
     - fira-code-fonts
 
+type: rpm-ostree
+install:
+    - lutris
 
 # remove:
 #   packages:

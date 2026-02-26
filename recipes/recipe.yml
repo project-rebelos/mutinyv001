@@ -70,7 +70,4 @@ modules:
   # =========================================================================
   - type: signing
 
-modules:
-  - type: rpm-ostree
-    install:
-      - lutris
+
