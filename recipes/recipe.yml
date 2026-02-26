@@ -69,3 +69,8 @@ modules:
   # 8. IMAGE SIGNING
   # =========================================================================
   - type: signing
+
+modules:
+  - type: rpm-ostree
+    install:
+      - lutris

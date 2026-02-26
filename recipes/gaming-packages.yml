@@ -38,10 +38,8 @@ install:
     - gamemode              # Feral Interactive's on-demand performance optimizer
     - gamescope             # Valve's micro-compositor for per-game display control
     - power-profiles-daemon
+    - kernel-bazzite
 
-    # ---- Gaming: Steam & Wine ----
-    # - steam                 # From RPM Fusion
-    # - lutris                # Game launcher/manager
 
     # ---- Gaming: Controller Support ----
     # NOTE: xone (Xbox One wireless) requires an akmod/DKMS build — skipping
@@ -64,7 +62,7 @@ install:
     - just                  # Command runner (for ujust recipes)
     - input-remapper        # Remap input devices (keyboard, mouse, gamepad)
     - libcec                # HDMI-CEC support for HTPC-like use
-    - solaar                # Logitech device manager
+    # - solaar                # Logitech device manager
 
     # ---- File Manager & ROM Properties ----
     - rom-properties-gtk3        # Preview ROM file metadata in file manager
