@@ -68,6 +68,7 @@ dnf5 -y makecache --repo tailscale-stable || true
 # RPM Fusion should not override Terra or Fedora's mesa.
 echo ":: Configuring repository priorities..."
 dnf5 -y config-manager setopt "terra-mesa".enabled=true
+dnf5 -y config-manager setopt "terra-mesa".excludepkgs="*.i686"
 dnf5 -y config-manager setopt "*terra*".priority=3
 dnf5 -y config-manager setopt "*rpmfusion*".priority=5
 
