@@ -63,6 +63,7 @@ install:
     - input-remapper        # Remap input devices (keyboard, mouse, gamepad)
     - libcec                # HDMI-CEC support for HTPC-like use
     # - solaar                # Logitech device manager
+    - lutris
 
     # ---- File Manager & ROM Properties ----
     - rom-properties-gtk3        # Preview ROM file metadata in file manager
@@ -80,9 +81,6 @@ install:
     - liberation-fonts
     - fira-code-fonts
 
-type: rpm-ostree
-install:
-    - lutris
 
 # remove:
 #   packages:
